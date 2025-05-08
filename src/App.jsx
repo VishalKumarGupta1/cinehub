@@ -1,9 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import { motion } from "framer-motion";
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
 import Favorites from "./pages/Favorites";
-import styles from './App.module.css';
+import styles from "./App.module.css";
 
 const App = () => (
   <Router>
@@ -14,19 +19,22 @@ const App = () => (
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={styles.nav}
       >
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? styles.active : "")}
-        >
-          Home
-        </NavLink>
-        <span className={styles.separator}>|</span>
-        <NavLink
-          to="/favorites"
-          className={({ isActive }) => (isActive ? styles.active : "")}
-        >
-          Favorites
-        </NavLink>
+        <div className={styles.logo}>CineHub</div>
+        <div className={styles.navRight}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
+            Home
+          </NavLink>
+          <span className={styles.separator}>|</span>
+          <NavLink
+            to="/favorites"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
+            Favorites
+          </NavLink>
+        </div>
       </motion.nav>
 
       <Routes>
